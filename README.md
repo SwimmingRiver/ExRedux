@@ -41,4 +41,5 @@ useDispatch:state 값을 변경
 connect:재사용시 필요
 
 ###### 기타
+---
 createStore를 쓰니까 에러가 생겨서 strictMode를 꺼서 사용하니 잘됐다. 영상 강의들이 제작될 때는 사용됐던 것 같은데 현재 버젼에서는 다른 방법으로 대체된거 같다.
