@@ -18,7 +18,8 @@ reducer 생성: function reducer(currentState,action){
 		//paremeter인자는 현재 state값,state를 어떻게 바꿀지에 대한 정보
 		//return 값이 새로운 state의 값
 		//state 불변성 유지를 위해 새로운 state로 복제한다
-
+action:state를 바꾸는 행동
+dispatch:action을 실행
  
 function reducer(currentState,action){
 	const newState = {...currentState}	
