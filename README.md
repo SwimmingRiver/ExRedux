@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+Redux 연습
+===
+### 개요
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+친구랑 만들어 보자고 했던 웹페이지가 생각나 만들어 보려고 하는데, redux를 사용하면 더 편할 것 같아서, 영상 강의 등을 통해서 학습하기 위해 만듦
+주로 강의를 통한 클론 코딩이 될 것
+## 정리
+Redux
+설치: redux,react-redux
 
-## Available Scripts
+store 생성: import {createStore} from 'redux';
+	    const store = createStore(reducer); // 상수로 선언
 
-In the project directory, you can run:
+reducer 생성: function reducer(currentState,action){
+	const newState = {...currentState}	
+	return	
+		 }
+		//paremeter인자는 현재 state값,state를 어떻게 바꿀지에 대한 정보
+		//return 값이 새로운 state의 값
+		//state 불변성 유지를 위해 새로운 state로 복제한다
+action:state를 바꾸는 행동
+dispatch:action을 실행
+ 
+function reducer(currentState,action){
+	const newState = {...currentState}	
+	if(currentState===undefined)	
+		return	{number:1,}
+		 }// state의 기본 값 설정(1)
 
-### `npm start`
+---
+import {Provider,useSelector,useDispatch,connect} from 'react-redux';
+--
+Provider:Component로 사용할 부분을 감싸준다. 
+prop store 필수 <Provider store={store}><...></...></Provider> 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+useSelector:어떤 state 값을 사용할지 선택
+함수를 인자로 받음, useSelector(function)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+useDispatch:state 값을 변경
+	const dispatch = useDispatch();
+	
+connect:재사용시 필요
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###### 기타
+---
+createStore를 쓰니까 에러가 생겨서 strictMode를 꺼서 사용하니 잘됐다. 영상 강의들이 제작될 때는 사용됐던 것 같은데 현재 버젼에서는 다른 방법으로 대체된거 같다.
