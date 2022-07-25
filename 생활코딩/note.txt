@@ -1,0 +1,28 @@
+redux
+
+store, state, reducer(함수 형태), dispatch, subscribe, getState
+
+reducer: (
+    dispatch를 통해서 action과 현재 state의 값을 참조하여 새로운 state값을 만듦
+         state의 초기값이 필요함
+
+         ex) function reducer(state, action){
+                if(state === undefined){ //초기값 미설정시
+                    return {...}// 초기값 초기화
+                }}
+
+        ex) function reducer(oldState, action){...}
+            var store = Redux.createStore(reducer);
+)
+
+render, subscribe
+
+ex) store.subscribe(render);
+
+ex)
+    store.dispatch({
+        type:'create',
+        payload:{title:title,desc:desc}} //action
+        );
+
+dispatch가 reducer를 호출할 때, 현재 state와 action값을 전달
