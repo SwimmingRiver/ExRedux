@@ -17,7 +17,7 @@ reducer: (
 
 render, subscribe
 
-ex) store.subscribe(render);
+ex) store.subscribe(render); //store.dispatch({...})로 state가 바뀔 때 마다 전달
 
 ex)
     store.dispatch({
