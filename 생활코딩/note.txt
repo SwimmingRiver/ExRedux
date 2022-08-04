@@ -26,3 +26,10 @@ ex)
         );
 
 dispatch가 reducer를 호출할 때, 현재 state와 action값을 전달
+
+
+react-redux:
+Provider : store를 제공할 component 범위 설정해주는 기능
+useSelector : 사용할  State 선택, 함수를 인자로 받음. ex) const number = useSelector(state=>state.number);
+useDispatch : state 변경시 사용
+connnect : 재사용성

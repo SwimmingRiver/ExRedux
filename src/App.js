@@ -1,17 +1,29 @@
-import { BrowserRouter, Route,Routes } from "react-router-dom";
-import Detail from "./routes/Detail";
-import Home from "./routes/Home";
-
+import CartMain from "./Cart/CartMain";
+import { Provider } from 'react-redux';
+import {createStore} from 'redux';
 
 function App() {
+//   function reducer(state=[],action){
+//     if(state===undefined){
+//       return{
+//         list:[]
+//       };
+//     }
+//     const newState = {...state};
+//     switch(action.type){
+//       case "ADD": return [...newState,action.payload];
+//       case "DEL": return [...action.payload];
+//       default: return state;
+//     }
+//   }
+// const store = createStore(reducer);
   return (
     <>
-     <BrowserRouter>
-     <Routes>
-       <Route path="/" element={<Home/>}/>
-       <Route path="/:id" element={<Detail/>}/>
-     </Routes>
-     </BrowserRouter>
+    {/* <Provider store={store}>
+    <CartMain/>
+    </Provider> */}
+    
+    
     </>
   );
 }
