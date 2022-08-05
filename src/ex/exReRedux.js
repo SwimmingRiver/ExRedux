@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
 function ExReRedux(){
-    const reducer = (state=[1,2,3,4],action)=>{
+    const reducer = (state=[],action)=>{
         let newState =[];
        newState = [...state,action.payload];
         switch(action.type){

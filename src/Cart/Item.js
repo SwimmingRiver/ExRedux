@@ -7,11 +7,22 @@ const Box = styled.div`
     width: 80px;
     height: 85px;
 `;
+const add=(name,num)=>{
+    let item={
+        name:name,
+        number:num,
+    }
+    return{
+        type:"ADD",
+        payload:item,
+        }
+    };
 function Item(props){
+    const IName = props.name;
+    const Nums =props.number
     const dispatch = useDispatch();
-    const sendInfo=()=>{
-        const IName = props.name;
-       dispatch({type:"ADD"})
+    const sendInfo=()=>{    
+       dispatch(add(IName,Nums))
     }
     return<>
         <Box>
