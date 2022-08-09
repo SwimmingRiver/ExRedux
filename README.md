@@ -40,7 +40,26 @@ useDispatch:state 값을 변경
 	const dispatch = useDispatch();
 	
 connect:재사용시 필요
-
+	function A(state,ownProps){//보통 mapStateToProps라고 명명
+		return (...)
+	}   
+		export default connect (store에서 state를 가져오는 함수A)(component);//A가 return하는 값을 component의 props로 추가할 수 있다
+--
+## redux-toolkit:
+	{
+	createAction을 이용해서 action의 type 정의
+	createReducer는 createReducer(state초기값,{
+		[action의 type]:()=>{} *state의 불변성(?)을 유지할 필요없음 ex) state.push(...) 가능
+		}) 형식으로 사용 (다른 제어문을 이용할 필요 없음) 
+		configureStore createStore와 비슷하고 default(?)를 가지고 있음,devTools 활용에 용이하다
+		createSlice({
+		name:"aReducer",
+		initialState:[],
+		reducer:{...}
+		})  형태로 선언하고 action까지 제공함
+	}
 ###### 기타
 ---
-createStore를 쓰니까 에러가 생겨서 strictMode를 꺼서 사용하니 잘됐다. 영상 강의들이 제작될 때는 사용됐던 것 같은데 현재 버젼에서는 다른 방법으로 대체된거 같다.
+createStore를 쓰니까 에러가 생겨서 strictMode를 꺼서 사용하니 잘됐다(X).
+=>redux-toolkit 사용을 권장하며 configureStore로 대체가능하고,createStore도 취소선이 생기지만 사용에는 문제가 없다  
+ 영상 강의들이 제작될 때는 사용됐던 것 같은데 현재 버젼에서는 다른 방법으로 대체된거 같다. 

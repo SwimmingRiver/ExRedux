@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-
 const Box = styled.div`
     border: solid 3px black;
     width: 80px;
