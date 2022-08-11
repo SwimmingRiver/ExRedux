@@ -37,13 +37,13 @@ useSelector:어떤 state 값을 사용할지 선택
 함수를 인자로 받음, useSelector(function)
 
 useDispatch:state 값을 변경
-	const dispatch = useDispatch();
+const dispatch = useDispatch();
 	
 connect:재사용시 필요
-	function A(state,ownProps){//보통 mapStateToProps라고 명명
-		return (...)
-	}   
-		export default connect (store에서 state를 가져오는 함수A)(component);//A가 return하는 값을 component의 props로 추가할 수 있다
+function A(state,ownProps){//보통 mapStateToProps라고 명명
+return (...)
+}   
+export default connect (store에서 state를 가져오는 함수A)(component);//A가 return하는 값을 component의 props로 추가할 수 있다
 --
 ## redux-toolkit:
 	{
